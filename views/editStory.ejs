@@ -9,7 +9,7 @@
     <form method="POST" action= <%="/stories/edit/"+id%>>
 
         <label>Story Title </label><br>
-        <input type="text" name="story_title" value= <%=savedStory.story_title%>><br>
+        <input type="text" name="story_title" value= "<%=savedStory.story_title%>"><br>
 
         <label>User Story </label><br>
         <textarea type="text" name="story_desc"><%=savedStory.story_description %></textarea><br>

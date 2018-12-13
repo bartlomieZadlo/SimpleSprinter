@@ -48,7 +48,7 @@ router.post('/', function(req, res){
             })
         } else{
             let newStory = new Story(passedValues);
-            
+            newStory.status = "Planning"
             let csv = json2csvParser.parse(newStory);
             let outputStream = fs.createWriteStream("public/stories.csv", {flags:'a'});
             outputStream.write(csv + "\n");
