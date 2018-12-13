@@ -5,7 +5,7 @@ class Story{
     this.acceptance_criteria = passedValues.acceptance_criteria;
     this.business_value = passedValues.business_value;
     this.estimation =  passedValues.estimation;
-    this.status = "Planning";
+    this.status = passedValues.status;
     }
 };
 

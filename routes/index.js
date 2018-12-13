@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
             story_desc: row[1],
             acceptance_criteria: row[2],
             business_value: row[3],
-            estimation: row[4]
+            estimation: row[4],
+            status: row[5]
         }
         savedStories.push(new Story(passedValues));
     })
