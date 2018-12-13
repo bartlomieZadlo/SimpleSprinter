@@ -1,0 +1,59 @@
+<% include partials/header %>
+<h2><a href = "/story" method="GET">Add new Story</a></h2>
+    <% if(savedStories != undefined){ %>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="1">
+                    Story ID
+                </td>
+                <td colspan="1">
+                    Story Title
+                </td>
+                <td colspan="1">
+                    User Story
+                </td>
+                <td colspan="1">
+                    Acceptance Criteria
+                </td>
+                <td colspan="1">
+                    Business Value
+                </td>
+                <td colspan="1">
+                    Estimation
+                </td>
+                <td colspan="1">
+                    Status
+                </td>
+            </tr>
+        </thead>    
+            <tbody>
+                    <% for(var i=1; i<savedStories.length; i++) {%>
+                    <tr>
+                        <th scope="row">
+                            <%=i-1%>
+                        </th>
+                        <td>
+                            <a href=<%="/story/" + i%>> <%=savedStories[i].story_title %> </a>
+                        </td>
+                        <td>
+                            <%=savedStories[i].story_description %>
+                        </td>
+                        <td>
+                            <%=savedStories[i].acceptance_criteria %>
+                        </td>
+                        <td>
+                            <%=savedStories[i].business_value +" points" %>
+                        </td>
+                        <td>
+                            <%=savedStories[i].estimation + " h" %>
+                        </td>
+                        <td>
+                            <%=savedStories[i].status %>
+                        </td>
+                    </tr>
+                <%} %>
+            </tbody>
+        <%} %>                
+    </table>
+<% include partials/footer%>

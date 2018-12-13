@@ -1,0 +1,27 @@
+<% include partials/header %>
+    <% if(errors != undefined){ %>
+        <ul>
+        <% errors.forEach(function(error){ %>
+            <li><%= error.msg %></li>
+        <%}) %>
+        </ul>
+    <%} %>
+    <form method="POST" action="/stories/add">
+
+        <label>Story Title </label><br>
+        <input type="text" name="story_title"><br>
+
+        <label>User Story </label><br>
+        <textarea type="text" name="story_desc"></textarea><br>
+
+        <label>Acceptance Criteria </label><br>
+        <textarea type="text" name="acceptance_criteria"></textarea><br>
+
+        <label>Business Value </label><br>
+        <input type="number" name="business_value"><br>
+
+        <label>Estimation </label><br>
+        <input type="number" step="0.5" name="estimation"><br><br>
+        <input type="submit" value="Add new User Story">
+    </form>
+<% include partials/footer%>
