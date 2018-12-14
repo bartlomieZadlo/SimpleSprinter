@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
     if(typeof savedStories === 'undefined' || storyID == 0){
         res.redirect('/');
     }
-    //savedStories[storyID].story_title = JSON.stringify(savedStories[storyID].story_title);
-    
+   
     res.render('editStory', {
         id: storyID,
         savedStory: savedStories[storyID]
